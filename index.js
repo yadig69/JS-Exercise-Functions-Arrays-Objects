@@ -15,7 +15,7 @@
 function addNumbers(num1, num2) {
     return num1 + num2;
 }
-console.log(72, 29);
+
 // ⭐️ Example Challenge end ⭐️
 
 
@@ -36,7 +36,7 @@ console.log(72, 29);
  * 
  */
 function sayGoodbye(name) {
-    return `Goodbye, ${name}. have a great day.`
+    return `Goodbye, ${name}. Have a great day.`
 }
 console.log(sayGoodbye('Hannah'));
 /**
@@ -54,9 +54,9 @@ console.log(sayGoodbye('Hannah'));
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
  */
 function temperatureCtoF(tempInC) {
-    const tempInf = Math.round(tempInC * 9 / 5 * 32);
+    return Math.round(tempInC * 9 / 5 + 32);
 }
-console.log(temperatureCtoF);
+temperatureCtoF(24);
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -78,10 +78,11 @@ function temperatureInF(temp, unit) {
     if (unit == 'F') {
         return `${temp}F`
     } else {
-        return temperatureCtoF(temp);
+        return temperatureCtoF(temp) + 'F';
     }
 
 }
+console.log(temperatureInF(24, 'C'));
 /**
  * ### Challenge `makePersonObject`
  * 
@@ -115,9 +116,19 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
  */
-function getName(name) {
-    return {}
-}
+function getName(object) {
+    let person =
+
+        object.name
+
+
+
+    return 'Hello, my name is ' + person;
+
+};
+
+console.log(getName(name));
+
 
 
 /**
@@ -220,9 +231,10 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
  */
 function getCarInfoByIndex(inventory, index) {
-    /* code here */
+    console.log(inventory[index].car_model);
+    return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`;
 }
-
+console.log(getCarInfoByIndex(inventory, 0));
 /**
  * ### Challenge `getLastCarInfo`
  * 
@@ -234,10 +246,10 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
  */
-function getLastCarInfo( /* code here */ ) {
-    /* code here */
+function getLastCarInfo(inventory) {
+    return inventory[inventory.length - 1].car_make.car_model;
 }
-
+getLastCarInfo(inventory);
 /**
  * ### Challenge `getModelYears`
  * 
@@ -247,10 +259,12 @@ function getLastCarInfo( /* code here */ ) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
  */
-function getModelYears( /* code here */ ) {
-    /* code here */
-}
-
+// function getModelYears(arr) {
+//     for(let i = 0, i < arr.length; i++) {
+//         console.log(arr[i].car_year);
+//     }
+// }
+// getModelYears(inventory);
 /**
  * ### Challenge `getCarInfoById`
  *  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
